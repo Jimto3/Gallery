@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <img id="backgroundImage" />
+    <h3 id="orientWarning">Warning: screen size changed!</h3>
+    <div class="photoBoxPos">
+      <div id="photoBox"></div>
+    </div>
+    <form id="search">
+      <input name="submit" placeholder="Search" />
+    </form>
+    <div id="offScreenLoad"></div>
+    <!-- loads the fullscale images offscreen to prevent slow loading when changing background -->
+    <button id="save" onclick="savePhoto()">Save Photo</button>
+    <div id="saveBox">
+      <button class="saveData" onclick="toggleSavedPhotos()">
+        Saved Photos
+      </button>
+      <div class="saveData" id="savedPhotos"></div>
+    </div>
+    <button id="clear" onclick="localStorage.clear()">Clear Photos</button>
+  </body>
+</html>

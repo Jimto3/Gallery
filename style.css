@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+img {
+  transition: width 0.5s, height 0.5s;
+}
+
+button {
+  background: black;
+  color: white;
+  border: 3px solid white;
+  transition: color 0.5s, background 0.5s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+#save {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+#saveBox {
+  opacity: 0.9;
+  display: flex;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+  align-items: center;
+  flex-direction: column;
+  width: 22vw;
+}
+
+#savedPhotos {
+  display: flex;
+  background: black;
+  border: 3px solid white;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#savedPhotos img {
+  border: 2px solid white;
+  width: 10vw;
+  margin: 2px 0;
+  transition: filter 0.5s;
+}
+
+#savedPhotos img:hover {
+  filter: brightness(50%);
+}
+
+#offScreenLoad {
+  display: hidden;
+}
+
+#backgroundImage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#photoBox img:hover {
+  width: 15vw;
+}
+
+#photoBox img {
+  width: 10vw;
+  margin: 2px 0;
+}
+
+#photoBox {
+  display: flex;
+  flex-direction: column;
+  border-left: 5px dotted black;
+  height: 70vh;
+  padding-left: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 17vw;
+  align-items: center;
+  mask-image: linear-gradient(
+    transparent,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+#photoBox::-webkit-scrollbar {
+  display: none;
+}
+
+.photoBoxPos {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100vh;
+  margin-right: 5vw;
+}
+
+#clear {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+#orientWarning {
+  display: none;
+  color: white;
+  background: black;
+  border: 3px solid white;
+  position: absolute;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 10px;
+}
+
+@media (max-width: 700px) {
+  #photoBox {
+    width: 70vw;
+    height: 17vh;
+    border-bottom: 3px dotted black;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  }
+
+  #photoBox img {
+    margin: 0 2px;
+    height: 10vh;
+  }
+
+  #photoBox img:hover {
+    height: 15vh;
+  }
+
+  .photoBoxPos {
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: end;
+    margin-right: 0;
+    padding-bottom: 10vh;
+  }
+
+  #savedPhotos img {
+    border: 2px solid white;
+    width: 100%;
+    margin: 2px 0;
+    transition: filter 0.5s;
+  }
+}
